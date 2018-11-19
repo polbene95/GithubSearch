@@ -1,0 +1,191 @@
+p {
+    margin: 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    width: 400px;
+    min-height: 500px;
+}
+
+.search-bar-container {
+    width: 100%;
+    background: #f1f1f1;
+    min-height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 1% 0;
+    margin-bottom: 5%;
+    border: 3px groove grey;
+    border-radius: 25px;
+}
+
+#search {
+    width: 90%;
+    border-radius: 25px;
+    padding-left: 3%;
+}
+.search-button {
+    width: 7%;
+    height: 7%;
+}
+
+.info-container {
+    width: 100%;
+    min-height: 10vh;
+    background: #f1f1f1;
+    border: 3px groove grey;
+    border-radius: 25px;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-info-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image-container {
+    width: 40%;
+    max-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.name-and-bio-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.profile-image {
+    width: 90%;
+    height: 90%;
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.user-name {
+    font-style: italic;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.bio-title {
+    font-weight: bold;
+}
+
+.bio-text {
+    font-size: 1rem;
+}
+
+
+/*Repo Container*/
+
+.repo-list {
+    max-height: 150px;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+
+/* width */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 25px;
+}
+
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/*Warning Container*/
+
+.warning-container {
+    font-size: 2rem;
+    color: rgba(242, 7, 7, 0.74);
+    font-weight: bold;
+}
+
+/*Repo Container*/
+
+.repo-info-container {
+    width: 100%;
+}
+
+.repo-title {
+    font: 2rem bold;
+    width: 100%;
+    border-bottom: 1px solid grey;
+}
+
+/*Each Repo*/
+
+.each-repo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #888;
+    margin: 1% auto;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.each-repo>div {
+    width: 50%;
+}
+.each-repo>div:first-child {
+    font-weight: bold;
+}
+
+.forks-starts {
+    display: flex;
+    justify-content: space-around;
+}
+
+.forks-starts>div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon {
+    width: 10px;
+    height: 10px;
+    margin-left: 2%;
+}

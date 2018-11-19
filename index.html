@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nome do Documento</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+
+<body>
+    <div class="body" id="app">
+        <div class="search-bar-container container">
+            <input id="search" type="text" placeholder="search for a github user">
+            <img class="search-button" @click="getUser()" src="style/images/github-logo.png">
+        </div>
+        <div class="container info-container" v-if="firstCall">
+            <div class="main-info-container" v-if="!data.message">
+                <div class="profile-image-container">
+                    <img class="profile-image" v-if="data.avatar_url" :src="data.avatar_url" alt="profile github image">
+                    <img class="profile-image" v-if="!data.avatar_url" src="style/images/github-logo.png" alt="profile github image">
+                </div>
+                <div class="name-and-bio-container">
+                    <div class="name-and-username-container">
+                        <p class="user-name">@{{data.login}}</p>
+                        <p class="name">{{data.name}}</p>
+                    </div>
+                    <div class="bio-container" v-if="data.bio">
+                        <p class="bio-title">Bio</p>
+                        <p class="bio-text">{{data.bio}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="repo-info-container" v-if="!data.message">
+                <div class="repo-title">
+                    <p>Repositories</p>
+                </div>
+                <div class="repo-list">
+                    <div class="each-repo" v-for="repo in repos">
+                        <div>
+                            <p>{{repo.name}}</p>
+                        </div>
+                        <div class="forks-starts">
+                            <div>
+                                <p>{{repo.stargazers_count}}</p>
+                                <img class="icon" src="style/images/star.png" alt="star logo">
+                            </div>
+                            <div>
+                                <p>{{repo.forks}}</p>
+                                <img class="icon" src="style/images/fork.png" alt="fork logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="warning-container" v-if="data.message">
+                <p>No user found</p>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Vue -->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+    <!-- My Javascript -->
+    <script src="script/main.js"></script>
+</body>
+</html>
